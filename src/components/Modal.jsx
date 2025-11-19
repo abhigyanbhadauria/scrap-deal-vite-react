@@ -24,7 +24,7 @@ export default function Modal({ title, open, onClose, children, width = "max-w-m
             alt="Scrap Deal Logo"
             className="h-10 w-10 object-contain rounded"
           />
-          <h1 className="text-2xl font-bold text-green-700">Scrap Deal</h1>
+          <h1 className="text-2xl font-bold text-green-700">Scrap Deal test</h1>
         </div>
 
 
