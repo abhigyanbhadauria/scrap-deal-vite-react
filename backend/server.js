@@ -14,17 +14,16 @@ const app = express();
 // Connect DB
 connectDB();
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// ❌ REMOVE THIS
-// const authMiddleware = require('./src/middleware/authMiddleware');
-// app.use(authMiddleware);
-
-// Load Routes
-app.use("/api", require('./src/routes'));
+// Mount routes CORRECTLY
+app.use("/api/auth", require("./src/routes/auth.routes"));
+app.use("/api/scrap", require("./src/routes/scrap.routes"));
+app.use("/api/malwa", require("./src/routes/malwa.routes"));
+app.use("/api/dealer", require("./src/routes/dealer.routes"));
 
 // Health Check
 app.get('/health', (req, res) => {
