@@ -56,8 +56,8 @@ export default function AdminDashboard() {
 
       if (tab === "scrap") {
         url = q
-          ? `http://localhost:5001/api/admin/scrap?q=${encodeURIComponent(q)}`
-          : `http://localhost:5001/api/admin/scrap`;
+          ? `${API_BASE_URL}/admin/scrap?q=${encodeURIComponent(q)}`
+          : `${API_BASE_URL}/api/admin/scrap`;
 
         const res = await fetch(url, {
           headers: { Authorization: `Bearer ${token}` },
@@ -70,8 +70,8 @@ export default function AdminDashboard() {
 
       if (tab === "malwa") {
         url = q
-          ? `http://localhost:5001/api/malwa/search?q=${encodeURIComponent(q)}`
-          : `http://localhost:5001/api/malwa/all`;
+          ? `${API_BASE_URL}/api/malwa/search?q=${encodeURIComponent(q)}`
+          : `${API_BASE_URL}/api/malwa/all`;
 
         const res = await fetch(url);
         const body = await res.json();
@@ -81,8 +81,8 @@ export default function AdminDashboard() {
 
       if (tab === "dealers") {
         url = q
-          ? `http://localhost:5001/api/dealer/search?q=${encodeURIComponent(q)}`
-          : `http://localhost:5001/api/dealer/all`;
+          ? `${API_BASE_URL}/api/dealer/search?q=${encodeURIComponent(q)}`
+          : `${API_BASE_URL}/api/dealer/all`;
 
         const res = await fetch(url);
         const body = await res.json();
@@ -121,13 +121,13 @@ export default function AdminDashboard() {
       let url, method, body;
 
       if (tab === "scrap") {
-        url = `http://localhost:5001/api/admin/scrap/${id}/status`;
+        url = `${API_BASE_URL}/api/admin/scrap/${id}/status`;
         method = "PATCH";
         body = JSON.stringify({ status });
       }
 
       if (tab === "malwa") {
-        url = `http://localhost:5001/api/malwa/status`;
+        url = `${API_BASE_URL}/api/malwa/status`;
         method = "POST";
         body = JSON.stringify({ requestId: id, status });
       }

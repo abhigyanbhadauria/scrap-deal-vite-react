@@ -67,7 +67,7 @@ export default function DealerRegister({ onClose }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5001/api/dealer/register", {
+      const res = await fetch("${API_BASE_URL}/api/dealer/register", {
         method: "POST",
         body: fd,
       });
