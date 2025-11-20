@@ -1,6 +1,7 @@
 // frontend/src/admin/AdminLogin.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from "../config";
 
 export default function AdminLogin() {
   const [phone, setPhone] = useState('');

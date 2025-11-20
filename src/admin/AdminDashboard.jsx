@@ -1,6 +1,8 @@
 
 // frontend/src/admin/AdminDashboard.jsx
 import React, { useEffect, useState, useRef } from "react";
+import API_BASE_URL from "../config";
+
 
 function StatusBadge({ status }) {
   const map = {
@@ -56,7 +58,7 @@ export default function AdminDashboard() {
 
       if (tab === "scrap") {
         url = q
-          ? `${API_BASE_URL}/admin/scrap?q=${encodeURIComponent(q)}`
+          ? `${API_BASE_URL}/api/admin/scrap?q=${encodeURIComponent(q)}`
           : `${API_BASE_URL}/api/admin/scrap`;
 
         const res = await fetch(url, {

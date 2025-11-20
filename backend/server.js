@@ -24,6 +24,8 @@ app.use("/api/auth", require("./src/routes/auth.routes"));
 app.use("/api/scrap", require("./src/routes/scrap.routes"));
 app.use("/api/malwa", require("./src/routes/malwa.routes"));
 app.use("/api/dealer", require("./src/routes/dealer.routes"));
+app.use("/api/admin", require("./src/routes/admin.route"));
+
 
 // Health Check
 app.get('/health', (req, res) => {
