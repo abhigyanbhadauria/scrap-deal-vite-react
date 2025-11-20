@@ -1,5 +1,6 @@
 // src/components/ui/Login.jsx
 import React, { useState } from "react";
+import API_BASE_URL from "../../config";
 
 export default function Login({ onLoginSuccess, onClose, onopenSignup }) {
   const [phone, setPhone] = useState("");
@@ -9,7 +10,9 @@ export default function Login({ onLoginSuccess, onClose, onopenSignup }) {
   const [error, setError] = useState("");
   const [successText, setSuccessText] = useState("");
 
-  const API = "http://localhost:5001/api/auth";
+
+  const API = `${API_BASE_URL}/api/auth`;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +21,8 @@ export default function Login({ onLoginSuccess, onClose, onopenSignup }) {
     setSuccessText("");
 
     try {
-      const res = await fetch(API + "/login", {
+      
+      const res = await fetch(`${API}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone, password }),
