@@ -1,6 +1,6 @@
 // src/components/ui/Login.jsx
 import React, { useState } from "react";
-import API_BASE_URL from "../../config";
+import API_BASE_URL from "../../config.js";
 
 export default function Login({ onLoginSuccess, onClose, onopenSignup }) {
   const [phone, setPhone] = useState("");
@@ -12,6 +12,7 @@ export default function Login({ onLoginSuccess, onClose, onopenSignup }) {
 
 
   const API = `${API_BASE_URL}/api/auth`;
+
 
 
   const handleSubmit = async (e) => {

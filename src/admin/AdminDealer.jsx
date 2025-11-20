@@ -4,7 +4,8 @@ export default function AdminDealers() {
   const [dealers, setDealers] = useState([]);
 
   useEffect(() => {
-    fetch("${API_BASE_URL}/api/dealer/all")
+    fetch(`${API_BASE_URL}/api/dealer/all`)
+
       .then(res => res.json())
       .then(data => setDealers(data.dealers || []));
   }, []);

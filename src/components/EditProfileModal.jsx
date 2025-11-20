@@ -13,7 +13,7 @@ export default function EditProfileModal({ user, onClose, onSave }) {
     setError("");
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/auth/update-profile", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/update-profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

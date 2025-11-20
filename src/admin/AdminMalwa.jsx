@@ -7,8 +7,7 @@ export default function AdminMalwa() {
   // Fetch all malwa requests
   async function loadRequests() {
     try {
-      const res = await fetch("${API_BASE_URL}/api/malwa/all"); // You'll create this route
-      const body = await res.json();
+      const res = await fetch(`${API_BASE_URL}/api/malwa/all`)
       if (body.success) setRequests(body.data);
     } catch (err) {
       console.error(err);
@@ -22,7 +21,7 @@ export default function AdminMalwa() {
   // Update status: pending → approved → assigned → in_transit → completed
   async function updateStatus(id, status) {
     try {
-      const res = await fetch("${API_BASE_URL}/api/malwa/status", {
+      const res = await fetch(`${API_BASE_URL}/api/malwa/status`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ requestId: id, status }),

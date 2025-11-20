@@ -124,7 +124,7 @@ export function SellingForm({ onDone }) {
     };
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/scrap", {
+      const res = await fetch(`${API_BASE_URL}/api/scrap`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -342,7 +342,7 @@ export function TruckBookingForm({ onDone }) {
     };
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/malwa", {
+      const res = await fetch(`${API_BASE_URL}/api/malwa`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
