@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import EditProfileModal from "./EditProfileModal";
+import API_BASE_URL from "../config.js";
 
 export default function AccountPage({ onLogout }) {
   const user = JSON.parse(localStorage.getItem("scrap_deal_user") || "{}");
